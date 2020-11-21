@@ -1,0 +1,53 @@
+{
+  "name": "svelte-hamburger",
+  "description": "Animated hamburger icon",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Sean King",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "Hamburger.svelte",
+  "scripts": {
+    "build": "rollup -c",
+    "develop": "rollup -cw",
+    "build-storybook": "build-storybook",
+    "deploy:docs": "storybook-to-ghpages --out .cache",
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "npm run build && npm run deploy:docs"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "*.ts",
+    "*.svelte",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seaneking/svelte-hamburger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seaneking/svelte-hamburger/issues"
+  },
+  "homepage": "https://seaneking.github.io/svelte-hamburger/",
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/svelte": "^6.0.28",
+    "prettier": "^2.1.2",
+    "react-is": "^17.0.1",
+    "rollup": "^2.33.0",
+    "rollup-plugin-svelte": "^6.1.0",
+    "svelte": "^3.29.7",
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^4.5.2",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  }
+}
