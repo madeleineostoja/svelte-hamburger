@@ -1,7 +1,7 @@
 {
   "name": "svelte-hamburger",
   "description": "Animated hamburger icon",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Sean King",
   "main": "dist/index.js",
