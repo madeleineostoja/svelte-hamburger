@@ -1,26 +1,26 @@
 {
   "name": "svelte-hamburger",
   "description": "Animated hamburger icon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
-  "author": "Sean King",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "svelte": "Hamburger.svelte",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "svelte": "./src/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "develop": "rollup -cw",
     "build-storybook": "build-storybook",
     "deploy:docs": "storybook-to-ghpages --out .cache",
     "clean": "rm -rf ./dist",
-    "prepublishOnly": "npm run build && npm run deploy:docs"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "svelte"
   ],
   "files": [
-    "*.ts",
-    "*.svelte",
+    "src",
+    "types",
     "dist"
   ],
   "repository": {

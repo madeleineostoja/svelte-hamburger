@@ -2,11 +2,11 @@
   Hamburger Component
   Animated hamburger icon
 -->
-<script lang="ts">
-  export let open: boolean = false;
-  export let width: number = 32;
-  export let height: number = 24;
-  export let stroke: number = 2;
+<script>
+  export let open = false;
+  export let width = 32;
+  export let height = 24;
+  export let stroke = 2;
 </script>
 
 <style>
