@@ -6,19 +6,10 @@ import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 
 export default {
-  input: 'Hamburger.svelte',
+  input: pkg.svelte,
   output: [
     { file: pkg.module, format: 'es' },
     { file: pkg.main, format: 'umd', name: 'Imgix' }
   ],
-  plugins: [
-    resolve({
-      browser: true,
-      dedupe: ['svelte']
-    }),
-    commonJS(),
-    svelte({
-      preprocess: autoPreprocess()
-    })
-  ]
+  plugins: [svelte(), resolve(), commonJS()]
 };
