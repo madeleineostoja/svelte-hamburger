@@ -1,5 +1,5 @@
 /// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponentTyped } from 'svelte';
 
 export interface HamburgerProps {
   /**
@@ -10,7 +10,13 @@ export interface HamburgerProps {
   /**
    * @default false
    */
-   duoLine?: boolean;
+  duoLine?: boolean;
+
+  class?: string;
 }
 
-export default class Hamburger extends SvelteComponentTyped<HamburgerProps, {}, {}> {}
+export default class Hamburger extends SvelteComponentTyped<
+  HamburgerProps,
+  { click: MouseEvent; keydown: KeyboardEvent; keypress: KeyboardEvent },
+  {}
+> {}
