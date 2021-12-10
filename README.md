@@ -1,4 +1,5 @@
-# Svelte Hamburger
+<p align="center"><img src="https://i.imgur.com/1BJGy9f.gif" /></p>
+<h1 align="center">Svelte Hamburger</h1>
 
 [![NPM](https://img.shields.io/npm/v/svelte-hamburger)](https://www.npmjs.com/package/svelte-hamburger) [![License](https://img.shields.io/npm/l/svelte-hamburger)](https://github.com/madeleineostoja/svelte-hamburger/blob/master/LICENSE.md)
 
