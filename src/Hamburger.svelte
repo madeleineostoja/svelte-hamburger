@@ -9,8 +9,8 @@
 
   const EASING = `cubic-bezier(0.4, 0, 0.2, 1)`;
   const LINE_TRANSITION = open
-    ? `top 300ms 50ms ${EASING}, transform 300ms 350ms ${EASING};`
-    : `top 300ms 350ms ${EASING}, transform 300ms 50ms ${EASING};`;
+    ? `top 300ms 50ms ${EASING}, transform 300ms 350ms ${EASING}`
+    : `top 300ms 350ms ${EASING}, transform 300ms 50ms ${EASING}`;
 </script>
 
 <style>
@@ -53,16 +53,22 @@
 >
   <span
     class="line line--first"
-    style="{LINE_TRANSITION} {open ? 'transform: rotate(45deg)' : ''}"
+    style="transition: {LINE_TRANSITION}; {open
+      ? 'transform: rotate(45deg)'
+      : ''}"
   />
   {#if !duoLine}
     <span
       class="line line--middle"
-      style="{LINE_TRANSITION} {open ? 'transform: rotate(45deg)' : ''}"
+      style="transition: {LINE_TRANSITION}; {open
+        ? 'transform: rotate(45deg)'
+        : ''}"
     />
   {/if}
   <span
     class="line line--bottom"
-    style="{LINE_TRANSITION} {open ? 'transform: rotate(-45deg)' : ''}"
+    style="transition: {LINE_TRANSITION}; {open
+      ? 'transform: rotate(-45deg)'
+      : ''}"
   />
 </div>
