@@ -15,7 +15,8 @@
     "skipLibCheck": true,
     "lib": ["dom", "esnext"],
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
