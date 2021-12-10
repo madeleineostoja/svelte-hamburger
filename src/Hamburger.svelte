@@ -6,6 +6,16 @@
   export let open;
   /** Whether to show only 2 lines */
   export let duoLine;
+
+  const LINE_TRANSITION = open
+    ? `top var(--animation-duration, 300ms) 50ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1)), transform ${
+        animation.duration
+      }ms ${
+        animation.duration + 50
+      }ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));`
+    : `top var(--animation-duration, 300ms) ${animation.duration + 50}ms ${
+        animation.easing
+      }, transform var(--animation-duration, 300ms) 50ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));`;
 </script>
 
 <style>
@@ -50,16 +60,16 @@
 >
   <span
     class="line line--first"
-    style={open ? 'transform: rotate(45deg)' : ''}
+    style="{LINE_TRANSITION} {open ? 'transform: rotate(45deg)' : ''}"
   />
   {#if !duoLine}
     <span
       class="line line--middle"
-      style={open ? 'transform: rotate(45deg)' : ''}
+      style="{LINE_TRANSITION} {open ? 'transform: rotate(45deg)' : ''}"
     />
   {/if}
   <span
     class="line line--bottom"
-    style={open ? 'transform: rotate(-45deg)' : ''}
+    style="{LINE_TRANSITION} {open ? 'transform: rotate(-45deg)' : ''}"
   />
 </div>
