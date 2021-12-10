@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    // Modules
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "esnext",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
-    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
+
+    // Type checking
     "strict": true,
-    "lib": ["esnext", "dom"],
-    "types": ["svelte"]
+    "skipLibCheck": true,
+    "lib": ["dom", "esnext"],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["**/*"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

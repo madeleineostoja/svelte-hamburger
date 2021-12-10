@@ -10,5 +10,5 @@ export default {
     { file: pkg.module, format: 'es' },
     { file: pkg.main, format: 'umd', name: 'Imgix' }
   ],
-  plugins: [svelte(), resolve(), commonJS()]
+  plugins: [resolve(), commonJS(), svelte()]
 };

@@ -1,8 +1,8 @@
 # Svelte Hamburger
 
-[![NPM](https://img.shields.io/npm/v/svelte-hamburger)](https://www.npmjs.com/package/svelte-hamburger) [![License](https://img.shields.io/npm/l/svelte-hamburger)](https://github.com/seaneking/svelte-hamburger/blob/master/LICENSE.md)
+[![NPM](https://img.shields.io/npm/v/svelte-hamburger)](https://www.npmjs.com/package/svelte-hamburger) [![License](https://img.shields.io/npm/l/svelte-hamburger)](https://github.com/madeleineostoja/svelte-hamburger/blob/master/LICENSE.md)
 
-Animated hamburger icon
+Featherweight, performant animated hamburger menu icon for Svelte with no external dependencies.
 
 ### Usage
 
@@ -13,18 +13,48 @@ npm i svelte-hamburger
 ```svelte
 <script>
   import Hamburger from 'svelte-hamburger';
+
+  let open = false;
 </script>
 
-<Hamburger bind:open />
+<Hamburger {open} on:click={() => open = !open} />
 ```
-
-See the [API Docs](https://seaneking.github.io/svelte-hamburger/) for a full overview of props and options.
 
 ### Properties
 
-| Property | Type      | Default | Description               |
-| -------- | --------- | ------- | ------------------------- |
-| `open`   | `boolean` | `false` | Whether hamburger is open |
-| `width`  | `number`  | `32`    | Width of the icon         |
-| `height` | `number`  | `24`    | Height of the icon        |
-| `stroke` | `number`  | `2`     | Thickness of the lines    |
+| Property  | Type      | Default | Description                              |
+| --------- | --------- | ------- | ---------------------------------------- |
+| `open`    | `boolean` | `false` | Whether hamburger is open                |
+| `duoLine` | `boolean` | `false` | Whether to only use 2 lines for the icon |
+
+```svelte
+<Hamburger open={false} duaLine={true} />
+```
+
+### Styling
+
+Set the desired height, width, and color of the icon direclty on the component. It will consume `class` strings and you can target them with a `:global` modifier in your Svelte styles.
+
+```svelte
+<style>
+  header :global(.hamburger) {
+    /* Custom styles */
+  }
+</style>
+
+<header>
+  <Hamburger class="hamburger" />
+</header>
+```
+
+Additionally the following CSS properties are available for more fine grained control over the style of the icon.
+
+| Property               | Default                        | Description                          |
+| ---------------------- | ------------------------------ | ------------------------------------ |
+| `--line-width`         | `2px`                          | Width of the icon lines              |
+| `--animation-duration` | `300ms`                        | Duration of the open/close animation |
+| `--animation-easing`   | `cubic-bezier(0.4, 0, 0.2, 1)` | Easing for the open/close animation  |
+
+```svelte
+<Hamburger --line-width="3px" --animation-duration="200ms" />
+```

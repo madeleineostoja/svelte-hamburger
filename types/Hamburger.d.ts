@@ -8,19 +8,9 @@ export interface HamburgerProps {
   open?: boolean;
 
   /**
-   * @default 32
+   * @default false
    */
-  width?: number;
-
-  /**
-   * @default 24
-   */
-  height?: number;
-
-  /**
-   * @default 2
-   */
-  stroke?: number;
+   duoLine?: boolean;
 }
 
 export default class Hamburger extends SvelteComponentTyped<HamburgerProps, {}, {}> {}

@@ -1,70 +1,59 @@
 <!--
-  Hamburger Component
-  Animated hamburger icon
+  ## Animated hamburger menu icon
 -->
 <script>
-  export let open = false;
-  export let width = 32;
-  export let height = 24;
-  export let stroke = 2;
-
+  /** Whether the icon is in an open state */
+  export let open;
+  /** Whether to show only 2 lines */
+  export let duoLine;
 </script>
 
-<div class:open on:click>
-  <svg style="min-height: {height}px;" {width} {height}>
-    <line
-      id="top"
-      style="stroke-width: {stroke}; {open
-        ? `transform: translate(${height / 3}px, 0px) rotate(45deg);`
-        : ''}"
-      x1="0"
-      y1="2"
-      x2={width}
-      y2="2"
-    />
-    <line
-      id="middle"
-      style="stroke-width: {stroke}"
-      x1="0"
-      y1={height / 3 + stroke}
-      x2={width}
-      y2={height / 3 + stroke}
-    />
-    <line
-      id="bottom"
-      style="stroke-width: {stroke}; {open
-        ? `transform: translate(-${width / 4}px, ${
-            width / 3
-          }px) rotate(-45deg);`
-        : ''}"
-      x1="0"
-      y1={height / 3 + height / 3 + stroke}
-      x2={width}
-      y2={height / 3 + height / 3 + stroke}
-    />
-  </svg>
-</div>
-
 <style>
-  svg {
-    transition: transform 0.3s ease;
+  .hamburger {
+    position: relative;
+    cursor: pointer;
+    height: 1rem;
+    width: 1.5rem;
   }
 
-  svg line {
-    stroke: currentColor;
-    transition: transform 0.3s ease;
+  .line {
+    position: absolute;
+    background: currentColor;
+    width: 100%;
+    height: var(--line-width, 2px);
+    border-radius: var(--line-width, 2px);
+    transition: transform var(--animation-duration, 300ms)
+      var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));
   }
 
-  .open svg {
-    transform: scale(0.7);
+  .line--first {
+    top: 0;
+  }
+  .line--middle {
+    top: 50%;
+  }
+  .line--bottom {
+    top: 100%;
   }
 
-  .open #middle {
-    opacity: 0;
+  .open .line {
+    top: 50% !important;
   }
-
-  .open #bottom {
-    transform: translate(-12px, 9px) rotate(-45deg);
-  }
-
 </style>
+
+<div class="hamburger {$$props.class || ''}" class:open>
+  <span
+    class="line line--first"
+    style={open ? 'transform: rotate(45deg)' : ''}
+  />
+  {#if !duoLine}
+    <span
+      class="line line--middle"
+      style={open ? 'transform: rotate(45deg)' : ''}
+    />
+  {/if}
+  <span
+    class="line line--bottom"
+    style={open ? 'transform: rotate(-45deg)' : ''}
+  />
+</div>
