@@ -41,7 +41,13 @@
   }
 </style>
 
-<div class="hamburger {$$props.class || ''}" class:open>
+<div
+  class="hamburger {$$props.class || ''}"
+  class:open
+  on:click
+  on:keydown
+  on:keypress
+>
   <span
     class="line line--first"
     style={open ? 'transform: rotate(45deg)' : ''}
