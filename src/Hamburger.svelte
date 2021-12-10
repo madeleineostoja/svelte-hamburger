@@ -27,7 +27,6 @@
     width: 100%;
     height: var(--line-width, 2px);
     border-radius: var(--line-width, 2px);
-    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .line--first {

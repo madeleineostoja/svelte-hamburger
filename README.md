@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/svelte-hamburger)](https://www.npmjs.com/package/svelte-hamburger) [![License](https://img.shields.io/npm/l/svelte-hamburger)](https://github.com/madeleineostoja/svelte-hamburger/blob/master/LICENSE.md)
 
-Featherweight, performant animated hamburger menu icon for Svelte with no external dependencies.
+Featherweight, performant, animated hamburger menu icon for Svelte with no external dependencies.
 
 ### Usage
 
@@ -49,12 +49,10 @@ Set the desired height, width, and color of the icon direclty on the component. 
 
 Additionally the following CSS properties are available for more fine grained control over the style of the icon.
 
-| Property               | Default                        | Description                          |
-| ---------------------- | ------------------------------ | ------------------------------------ |
-| `--line-width`         | `2px`                          | Width of the icon lines              |
-| `--animation-duration` | `300ms`                        | Duration of the open/close animation |
-| `--animation-easing`   | `cubic-bezier(0.4, 0, 0.2, 1)` | Easing for the open/close animation  |
+| Property       | Default | Description             |
+| -------------- | ------- | ----------------------- |
+| `--line-width` | `2px`   | Width of the icon lines |
 
 ```svelte
-<Hamburger --line-width="3px" --animation-duration="200ms" />
+<Hamburger --line-width="3px" />
 ```
