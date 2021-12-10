@@ -7,15 +7,10 @@
   /** Whether to show only 2 lines */
   export let duoLine;
 
+  const EASING = `cubic-bezier(0.4, 0, 0.2, 1)`;
   const LINE_TRANSITION = open
-    ? `top var(--animation-duration, 300ms) 50ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1)), transform ${
-        animation.duration
-      }ms ${
-        animation.duration + 50
-      }ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));`
-    : `top var(--animation-duration, 300ms) ${animation.duration + 50}ms ${
-        animation.easing
-      }, transform var(--animation-duration, 300ms) 50ms var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));`;
+    ? `top 300ms 50ms ${EASING}, transform 300ms 350ms ${EASING};`
+    : `top 300ms 350ms ${EASING}, transform 300ms 50ms ${EASING};`;
 </script>
 
 <style>
@@ -32,8 +27,7 @@
     width: 100%;
     height: var(--line-width, 2px);
     border-radius: var(--line-width, 2px);
-    transition: transform var(--animation-duration, 300ms)
-      var(--animation-easing, cubic-bezier(0.4, 0, 0.2, 1));
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .line--first {
