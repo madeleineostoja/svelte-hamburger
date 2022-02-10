@@ -19,6 +19,7 @@
     cursor: pointer;
     height: 1rem;
     width: 1.5rem;
+    outline: none !important;
   }
 
   .line {
